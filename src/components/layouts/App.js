@@ -6,14 +6,15 @@ import './../../assets/scss/index.scss';
 
 export default class App extends Component {
   changeRouteParams = (srcSymbol, destSymbol) => {
-    this.props.history.push(`/swap/${srcSymbol.toLowerCase()}-${destSymbol.toLowerCase()}`);
+	const currentUrl = this.props.history.location.pathname.split('/')[2];
+    this.props.history.push(`/swap/${currentUrl}/${srcSymbol.toLowerCase()}-${destSymbol.toLowerCase()}`);
   };
 
   render() {
-    const params = this.props.match.params;
-
+	const { match, match: {params}} = this.props;
+	const isNewStyling = match.url.includes('yolo2');
     return (
-      <div>
+      <div className={`${isNewStyling ? 'dark-theme' : ''}`}>
         <Header/>
         <Body
           srcSymbolParam={params.srcSymbol}
