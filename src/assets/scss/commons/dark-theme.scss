@@ -1,0 +1,97 @@
+$dark-bg-primary: rgb(20, 20, 20);
+$dark-bg-secondary: rgb(31, 30, 30);
+.header {
+  .dropdown__content,
+  .common__fade-in {
+    .token-selector__item-container {
+      display: flex;
+      flex-direction: column;
+      a {
+        padding: 10px 5px;
+      }
+    }
+  }
+}
+.dark-theme {
+  .header {
+    z-index: 2;
+    .dropdown__content,
+    .common__fade-in {
+      background-color: $dark-bg-primary;
+	  box-shadow: 1px 1px 6px 1px  $dark-bg-secondary;
+	  border: none;
+      .token-selector__item-container {
+        display: flex;
+        flex-direction: column;
+        a {
+          padding: 10px;
+		  color:#5292e6
+        }
+      }
+    }
+  }
+  .body {
+    background: $dark-bg-secondary;
+    z-index: 1;
+    .swap {
+      background-color: $dark-bg-primary;
+      .dropdown__content {
+        background-color: $dark-bg-secondary;
+        .token-selector__input {
+          background-color: $dark-bg-secondary;
+        }
+      }
+      .swap__icon {
+        opacity: 0.8;
+      }
+      .swap__content-box {
+        border: 1px solid #838486;
+        * {
+          color: white;
+        }
+        background-color: $dark-bg-secondary;
+        .swap__content-input {
+          background-color: $dark-bg-secondary;
+        }
+      }
+    }
+
+    .market {
+      * {
+        color: rgb(233, 232, 232);
+      }
+      .market__header-switcher {
+        border-bottom-color: transparent;
+      }
+      .market__header-input {
+        input {
+          background-color: $dark-bg-primary;
+        }
+      }
+      .market__item-change {
+        color: initial;
+      }
+      .market__item {
+        background-color: $dark-bg-primary;
+        .market__item-header {
+          border-bottom-color: gray;
+        }
+        .market__item-button {
+          color: #5292e6;
+        }
+        .market__item-button--blue {
+          color: white;
+        }
+      }
+    }
+  }
+  .footer {
+    * {
+      background-color: $dark-bg-primary;
+    }
+    .footer__copyright {
+      padding: 30px 0;
+      margin: 0;
+    }
+  }
+}

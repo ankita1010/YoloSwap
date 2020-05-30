@@ -31,9 +31,13 @@ const routing = (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/swap/:srcSymbol-:destSymbol" component={App} />
+			
+          <Route exact path="/swap/yolo1/:srcSymbol-:destSymbol/" component={App} />
+		  <Route exact path="/swap/yolo2/:srcSymbol-:destSymbol/" component={App} />
           <Route exact path="/widget" component={Widget} />
-          <Redirect to={`/swap/eos-${envConfig.TOKENS[1].symbol.toLowerCase()}`}/>
+		  <Route path="/swap/yolo1" component={() => <Redirect to="/swap/yolo1/:srcSymbol-:destSymbol/"/>}/>
+		  <Route path="/swap/yolo2" component={() => <Redirect to="/swap/yolo2/:srcSymbol-:destSymbol/"/>}/>
+          <Redirect to={`/swap/yolo1/eos-${envConfig.TOKENS[1].symbol.toLowerCase()}`}/>
         </Switch>
       </div>
     </Router>
